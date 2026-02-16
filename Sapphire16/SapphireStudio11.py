@@ -43,16 +43,16 @@ class SapphireIDE:
         self.ver_entry.pack(side=tk.LEFT, padx=2)
 
         # Buttons
-        self.new_btn = tk.Button(self.toolbar, text="+ NEW", command=self.new_file, bg="#9b59b6", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
+        self.new_btn = tk.Button(self.toolbar, text="+ New", command=self.new_file, bg="#9b59b6", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
         self.new_btn.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.run_btn = tk.Button(self.toolbar, text="▶ RUN", command=self.run_code, bg="#2ecc71", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
+        self.run_btn = tk.Button(self.toolbar, text="▶ Run", command=self.run_code, bg="#2ecc71", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
         self.run_btn.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.stop_btn = tk.Button(self.toolbar, text="■ STOP", command=self.stop_code, bg="#e74c3c", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2", state="disabled")
+        self.stop_btn = tk.Button(self.toolbar, text="■ Stop", command=self.stop_code, bg="#ffe368", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2", state="disabled")
         self.stop_btn.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.save_btn = tk.Button(self.toolbar, text="💾 SAVE", command=self.save_file, bg="#3498db", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
+        self.save_btn = tk.Button(self.toolbar, text="💾 Save", command=self.save_file, bg="#3498db", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
         self.save_btn.pack(side=tk.LEFT, padx=5, pady=5)
 
         self.status_label = tk.Label(self.toolbar, text="Ready", bg="#2d2d2d", fg="white", font=("Consolas", 9))
@@ -74,6 +74,7 @@ class SapphireIDE:
         # Open directly in the SapphireProjects folder
         file_path = filedialog.asksaveasfilename(
             initialdir=self.workspace_path,
+            font=("Segoe UI", 9),
             title="Save Sapphire Project",
             filetypes=(("Sapphire Files", "*.sp"), ("All Files", "*.*")),
             defaultextension=".sp"
@@ -160,6 +161,12 @@ main {
             else:
                 self.process.terminate()
             self.log_output("\n[STOPPED]")
+    def stop_game(self):
+    # Only try to kill the process if it actually exists and is running
+        if hasattr(self, 'game_process'):
+            if self.game_process.poll() is None: 
+                self.game_process.terminate()
+                print("Stopped.")
     def execute_process(self, interpreter_file):
         try:
             self.process = subprocess.Popen(
