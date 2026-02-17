@@ -10,13 +10,15 @@ import os
 import threading
 import shutil
 
+
 class SapphireIDE:
     def __init__(self, root):
         self.root = root
-        icon_path = os.path.join(os.getcwd(), "icon.ico")
+        BASE_PATH = os.path.dirname(__file__)
+        ICON_PATH = os.path.join(BASE_PATH, "icon.ico")
         if os.path.exists(icon_path):
             try:
-                self.root.iconbitmap(icon_path)
+                self.root.iconbitmap(ICON_PATH)
             except:
                 pass
         
@@ -227,4 +229,5 @@ main {
 if __name__ == "__main__":
     root = tk.Tk()
     app = SapphireIDE(root)
+
     root.mainloop()
