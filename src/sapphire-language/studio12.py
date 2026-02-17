@@ -9,6 +9,7 @@ import sys
 import os
 import threading
 import shutil
+import sapphire-language.engine12 as engine
 
 
 class SapphireIDE:
@@ -38,12 +39,9 @@ class SapphireIDE:
         self.toolbar.pack(side=tk.TOP, fill=tk.X)
         
         # VERSION SELECTOR
-        tk.Label(self.toolbar, text="Version:", bg="#2d2d2d", fg="#aaaaaa").pack(side=tk.LEFT, padx=(10, 2))
-        self.ver_entry = tk.Entry(self.toolbar, width=5, bg="#3c3c3c", fg="white", insertbackground="white", bd=0)
         
-        detected_ver = self.detect_version()
-        self.ver_entry.insert(0, detected_ver) 
-        self.ver_entry.pack(side=tk.LEFT, padx=2)
+        self.ver_label = tk.Label(self.toolbar, text="v1.7.0", font=("Segoe UI", 10, "bold"),fg="#ffffff", bg="#333333")
+        self.ver_label.pack(side=tk.LEFT, padx=2)
 
         # Buttons
         self.new_btn = tk.Button(self.toolbar, text="+ New", command=self.new_file, bg="#003047", fg="white", font=("Segoe UI", 9, "bold"), padx=10, pady=2, bd=0, cursor="hand2")
@@ -171,7 +169,7 @@ main {
 
 
     def run_code(self):
-        import sapphire_language.engine as engine
+        
         interpreter_file = os.path.abspath(engine.__file__)
 
         if not os.path.exists(interpreter_file):
