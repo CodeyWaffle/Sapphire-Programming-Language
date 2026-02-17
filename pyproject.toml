@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sapphire-language"
+version = "1.7.0"
+author = [
+  { name="CodeyWaffle@GitHub", email="shibatailyt@gmail.com" },
+]
+description = "A lightweight programming language with a built-in Studio and pygame functions."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pygame-ce",
+]
+
+[project.scripts]
+# 這讓使用者安裝後，直接在終端機輸入 sapphire-studio 就能啟動
+sapphire-language = "sapphire-language.studio12:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+# 確保打包時會把這些非程式碼檔案帶走
+sapphire = ["*.ico", "*.bat"]
