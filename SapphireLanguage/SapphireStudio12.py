@@ -9,8 +9,8 @@ import sys
 import os
 import threading
 import shutil
-
-class SapphireIDE:
+def main():
+    class SapphireIDE:
     def __init__(self, root):
         self.root = root
         icon_path = os.path.join(os.getcwd(), "icon.ico")
@@ -145,19 +145,19 @@ class SapphireIDE:
             print(f"💎 Sapphire: Loaded {file_path}")
     def load_welcome_code(self):
         welcome = """// 💎 Welcome to Sapphire v1.7
-setup {
+    setup {
     //this is a comment.
     //this is a setup area that runs once at the start
     var str(greeting){"Hello, Sapphire Developer!"}
     println(var str greeting)
-}
+    }
 
-main {
+    main {
     // this is a main loop that runs continuously
     println("System is active and running.")
     abort() // stops the program after one loop
-}
-"""
+    }
+    """
         self.editor.insert("1.0", welcome)
 
     def new_file(self):
@@ -228,3 +228,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = SapphireIDE(root)
     root.mainloop()
+    main()
