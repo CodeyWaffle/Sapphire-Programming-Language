@@ -171,13 +171,12 @@ main {
 
 
     def run_code(self):
-        ver = self.ver_entry.get().strip()
-        interpreter_file = f"Sapphire{ver}.py"
+        import sapphire_language.engine as engine
+        interpreter_file = os.path.abspath(engine.__file__)
 
         if not os.path.exists(interpreter_file):
-            messagebox.showerror("Error", f"Missing: {interpreter_file}")
+            messagebox.showerror("Error", "Sapphire Engine not found in package!")
             return
-
         self.status_label.config(text="Running...", fg="yellow")
         self.stop_btn.config(state="normal")
         self.run_btn.config(state="disabled")
