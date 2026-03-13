@@ -2,11 +2,12 @@ Sapphire is an easy programming language to learn, created by GitHub@CodeyWaffle
 The Sapphire programming language is designed as a fast, simple, and portable tool with native UI capabilities. It is licensed under MIT, allowing for building, selling, and remixing, but includes a "Be a good guy" policy emphasizing responsible use, prohibiting the creation of weapons or harmful software, requiring credit for major projects or forks, discouraging harassment automation, and promoting innovation over imitation. Visit the Sapphire Programming Language GitHub repository for more details.
 
 Executing the code
+
 **NEW INSTRUCTIONS**
-    1. Install python
-    2. Install pip
-    3. Enter pip install sapphire-language
-    4. Enter sapphire_language
+1.     Install python
+2.     Install pip
+3.     Enter pip install sapphire-language
+4.     Enter sapphire_language
     
 Sapphire 15 and beyond:
 
