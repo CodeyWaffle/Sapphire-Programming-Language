@@ -1,8 +1,13 @@
-Sapphire is an easy programming language to learn, created by GitHub@CodeyWaffle, with the help of Google Gemini and ChatGPT, built on the basics of Python and C++ (Windows Only)
-The Sapphire programming language is designed as a fast, simple, and portable tool with native UI capabilities [1]. It is licensed under MIT, allowing for building, selling, and remixing, but includes a "Be a good guy" policy emphasizing responsible use, prohibiting the creation of weapons or harmful software, requiring credit for major projects or forks, discouraging harassment automation, and promoting innovation over imitation [1]. Visit the Sapphire Programming Language GitHub repository for more details.
+Sapphire is an easy programming language to learn, created by GitHub@CodeyWaffle, with the help of Google Gemini and ChatGPT, built on the basics of Python and C++ (Python supported device only)
+The Sapphire programming language is designed as a fast, simple, and portable tool with native UI capabilities. It is licensed under MIT, allowing for building, selling, and remixing, but includes a "Be a good guy" policy emphasizing responsible use, prohibiting the creation of weapons or harmful software, requiring credit for major projects or forks, discouraging harassment automation, and promoting innovation over imitation. Visit the Sapphire Programming Language GitHub repository for more details.
 
 Executing the code
-
+**NEW INSTRUCTIONS**
+    1. Install python
+    2. Install pip
+    3. Enter pip install sapphire-language
+    4. Enter sapphire_language
+    
 Sapphire 15 and beyond:
 
     Install pygamece or pygame and pygame-supported Python versions
